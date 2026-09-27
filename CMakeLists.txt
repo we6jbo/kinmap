@@ -20,3 +20,11 @@ qt_add_executable(kinmap
 target_link_libraries(kinmap PRIVATE Qt6::Widgets)
 
 install(TARGETS kinmap RUNTIME DESTINATION bin)
+
+# Flathub desktop integration
+install(FILES org.oneal.kinmap.desktop
+        DESTINATION share/applications)
+install(FILES org.oneal.kinmap.metainfo.xml
+        DESTINATION share/metainfo)
+install(FILES org.oneal.kinmap.svg
+        DESTINATION share/icons/hicolor/scalable/apps)

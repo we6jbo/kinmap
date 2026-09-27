@@ -111,3 +111,4 @@ Thumbs.db
 *.7z
 
 .gitignore.backup.*
+*.before-flathub-metadata-*

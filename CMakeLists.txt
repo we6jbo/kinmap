@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.21)
 
-project(kinmap VERSION 0.1 LANGUAGES CXX)
+project(kinmap VERSION 2.4 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -19,6 +19,4 @@ qt_add_executable(kinmap
 
 target_link_libraries(kinmap PRIVATE Qt6::Widgets)
 
-install(TARGETS kinmap
-    RUNTIME DESTINATION bin
-)
+install(TARGETS kinmap RUNTIME DESTINATION bin)

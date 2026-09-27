@@ -2,41 +2,64 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
-  <property name="geometry">
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>640</width>
-    <height>420</height>
-   </rect>
-  </property>
-  <property name="windowTitle">
-   <string>kinmap</string>
-  </property>
+  <property name="geometry"><rect><x>0</x><y>0</y><width>1500</width><height>860</height></rect></property>
+  <property name="windowTitle"><string>KinMap</string></property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QLabel" name="titleLabel">
-      <property name="text">
-       <string>kinmap</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignmentFlag::AlignCenter</set>
-      </property>
+     <layout class="QHBoxLayout" name="topLayout">
+      <item>
+       <widget class="QLabel" name="updatePalmLabel">
+        <property name="minimumSize"><size><width>34</width><height>34</height></size></property>
+        <property name="toolTip"><string>KinMap v24 update marker — palm tree</string></property>
+        <property name="styleSheet"><string notr="true">font-size: 24pt; font-weight: 700;</string></property>
+        <property name="text"><string>🌴</string></property>
+        <property name="alignment"><set>Qt::AlignmentFlag::AlignCenter</set></property>
+       </widget>
+      </item>
+      <item><widget class="QLabel" name="titleLabel"><property name="text"><string>KinMap Family Relationship Viewer — v24</string></property></widget></item>
+      <item><spacer name="horizontalSpacer"><property name="orientation"><enum>Qt::Orientation::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>20</height></size></property></spacer></item>
+      <item><widget class="QLineEdit" name="searchEdit"><property name="placeholderText"><string>Find a person…</string></property></widget></item>
+      <item><widget class="QPushButton" name="searchButton"><property name="text"><string>Find</string></property></widget></item>
+      <item><widget class="QPushButton" name="reloadButton"><property name="text"><string>Reload</string></property></widget></item>
+      <item><widget class="QPushButton" name="resetButton"><property name="text"><string>Reset</string></property><property name="toolTip"><string>Reset both panes to the default centered position: 13% left and 32% right</string></property></widget></item>
+      <item><widget class="QPushButton" name="copyPositionButton"><property name="text"><string>Copy Position</string></property><property name="toolTip"><string>Add the current left/right pane positions and zooms to the in-memory position log</string></property></widget></item>
+      <item><widget class="QPushButton" name="copyPositionLogButton"><property name="text"><string>Copy Position Log</string></property><property name="toolTip"><string>Copy all recorded pane positions as JSON</string></property></widget></item>
+      <item><widget class="QPushButton" name="centerMeButton"><property name="text"><string>Center Me</string></property><property name="toolTip"><string>Center Me in the left pane. The right pane follows to the same tree coordinates.</string></property></widget></item>
+      <item><widget class="QPushButton" name="addParentButton"><property name="text"><string>Add Parent</string></property><property name="toolTip"><string>Select a person card, then add an existing or new parent. Saved persistently.</string></property></widget></item>
+      <item><widget class="QPushButton" name="addChildButton"><property name="text"><string>Add Child</string></property><property name="toolTip"><string>Select a person card, then add an existing or new child. Saved persistently.</string></property></widget></item>
+      <item><widget class="QPushButton" name="editPersonButton"><property name="text"><string>Edit Person</string></property><property name="toolTip"><string>Edit birth/death fields for a locally-added person. Pi JSON people are read-only.</string></property></widget></item>
+      <item><widget class="QPushButton" name="deletePersonButton"><property name="text"><string>Delete Person</string></property><property name="toolTip"><string>Delete a locally-added person. Their TG09 identifier is permanently retired.</string></property></widget></item>
+      <item><widget class="QPushButton" name="recordButton"><property name="text"><string>Record</string></property><property name="toolTip"><string>Record the people currently visible in the KinMap panes for a Vibe genealogy-research session.</string></property></widget></item>
+      <item><widget class="QPushButton" name="aboutButton"><property name="text"><string>About</string></property></widget></item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QSplitter" name="viewSplitter">
+      <property name="orientation"><enum>Qt::Orientation::Horizontal</enum></property>
+      <widget class="QGraphicsView" name="leftView"><property name="minimumSize"><size><width>350</width><height>450</height></size></property></widget>
+      <widget class="QGraphicsView" name="rightView"><property name="minimumSize"><size><width>350</width><height>450</height></size></property></widget>
      </widget>
     </item>
     <item>
-     <spacer name="verticalSpacer">
-      <property name="orientation">
-       <enum>Qt::Orientation::Vertical</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>20</width>
-        <height>40</height>
-       </size>
-      </property>
-     </spacer>
+     <layout class="QHBoxLayout" name="viewControlLayout">
+      <item><widget class="QLabel" name="leftPaneLabel"><property name="text"><string>Left pane</string></property></widget></item>
+      <item><widget class="QPushButton" name="leftZoomOutButton"><property name="text"><string>−</string></property><property name="toolTip"><string>Zoom left pane out</string></property></widget></item>
+      <item><widget class="QPushButton" name="leftZoomInButton"><property name="text"><string>+</string></property><property name="toolTip"><string>Zoom left pane in</string></property></widget></item>
+      <item><widget class="QLabel" name="leftZoomLabel"><property name="text"><string>100%</string></property></widget></item>
+      <item><spacer name="middleSpacer"><property name="orientation"><enum>Qt::Orientation::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>40</width><height>20</height></size></property></spacer></item>
+      <item><widget class="QLabel" name="rightPaneLabel"><property name="text"><string>Right pane</string></property></widget></item>
+      <item><widget class="QPushButton" name="rightZoomOutButton"><property name="text"><string>−</string></property><property name="toolTip"><string>Zoom right pane out</string></property></widget></item>
+      <item><widget class="QPushButton" name="rightZoomInButton"><property name="text"><string>+</string></property><property name="toolTip"><string>Zoom right pane in</string></property></widget></item>
+      <item><widget class="QLabel" name="rightZoomLabel"><property name="text"><string>100%</string></property></widget></item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="bottomLayout">
+      <item><widget class="QLabel" name="statusLabel"><property name="text"><string>Ready</string></property></widget></item>
+      <item><spacer name="bottomSpacer"><property name="orientation"><enum>Qt::Orientation::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>40</width><height>20</height></size></property></spacer></item>
+      <item><widget class="QLabel" name="dragHintLabel"><property name="text"><string>Crosshair marks center • Shift + drag = 3× pan • Record captures visible TG/local people for Vibe research • Pi people read-only</string></property></widget></item>
+     </layout>
     </item>
    </layout>
   </widget>

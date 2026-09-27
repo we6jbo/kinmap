@@ -1,7 +1,112 @@
+# ============================================================
+# KinMap - files that must NOT be published to GitHub
+# ============================================================
+
+# ----------------------------
+# Build / generated Qt files
+# ----------------------------
 build/
 build-*/
 cmake-build-*/
 CMakeFiles/
 CMakeCache.txt
+cmake_install.cmake
+Makefile
 *.o
+*.obj
+*.a
+*.so
+*.so.*
+*.dll
+*.exe
+kinmap
+moc_*
+ui_*
+qrc_*
+*_autogen/
+
+# ----------------------------
+# Qt Creator local settings
+# ----------------------------
+.qtcreator/
 *.user
+*.user.*
+CMakeLists.txt.user
+
+# ----------------------------
+# Private genealogy/layout data
+# May contain living people,
+# private family labels, TG data,
+# coordinates, or local research.
+# ----------------------------
+default_layout.json
+tg_context_snapshot.json
+kinmap_state.json
+family_tree*.json
+family_tree*.db
+tg_registry*.db
+tg_registry*.json
+
+# Recording / research exports
+familyhistory/
+recordings/
+snapshot_*.json
+session_summary.json
+vibe_prompt.txt
+
+# Position/layout exports
+*position_log*.json
+*layout*.private.json
+private/
+private_data/
+local_data/
+
+# ----------------------------
+# Credentials and keys
+# ----------------------------
+*.key
+*.pem
+*.crt
+*.p12
+*.pfx
+*.cred
+*.secret
+*.secrets
+.env
+.env.*
+id_rsa
+id_ed25519
+t14_to_pi
+*.kdbx
+
+# ----------------------------
+# Machine-specific information
+# ----------------------------
+we6jbo-context/
+context.json
+local_config.json
+machine_config.json
+
+# ----------------------------
+# Logs / temporary files
+# ----------------------------
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ----------------------------
+# Archives that may contain
+# unfiltered project/private data
+# ----------------------------
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+

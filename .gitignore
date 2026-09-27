@@ -112,3 +112,7 @@ Thumbs.db
 
 .gitignore.backup.*
 *.before-flathub-metadata-*
+
+# Flathub/local validation artifacts
+.oneal-flathub-readiness-ok
+*.before-validator-repair-*

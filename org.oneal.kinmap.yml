@@ -1,0 +1,16 @@
+app-id: org.oneal.kinmap
+runtime: org.kde.Platform
+runtime-version: '6.11'
+sdk: org.kde.Sdk
+command: kinmap
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --share=ipc
+  - --device=dri
+modules:
+  - name: kinmap
+    buildsystem: cmake-ninja
+    sources:
+      - type: dir
+        path: .

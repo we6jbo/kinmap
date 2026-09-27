@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Kinmap
+Comment=Practice and learn fractions
+Exec=kinmap
+Icon=org.oneal.kinmap
+Terminal=false
+Categories=Education;
